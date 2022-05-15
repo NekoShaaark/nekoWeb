@@ -25,14 +25,17 @@ a {
     align-items: center;
     border-bottom: 1px solid #ddd;
 }
+
 .navigation-primary {
     display: flex;
+    cursor: pointer;
 }
 
 .navigation-secondary {
     display: flex;
     margin-left: 2%;
     margin-top: auto;
+    position: relative;
     transform: translateY(20px);
 }
 .navigation-secondary ul {
@@ -44,9 +47,12 @@ a {
 .navigation-secondary li {
     display: flex;
     padding: 8px;
+    text-shadow: 0px 2px rgba(119, 119, 119, 0.178);
 }
 .navigation-secondary a:hover {
     color: #0860d3;
+    position: relative;
+    transform: translateY(-2px);
 }
 
 .navigation-settings {
@@ -63,4 +69,13 @@ footer {
     margin-top: 50px;
     color: #777;
     border-top: 1px solid #eaeaea;
+}
+
+.not-found {
+    text-align: center;
+    margin-top: 50px;
+}
+.not-found a {
+    color: #0860d3;
+    text-decoration: underline;
 }

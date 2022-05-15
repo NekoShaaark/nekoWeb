@@ -1,7 +1,18 @@
-import Link from 'next/link';
-import Image from 'next/image';
+import Link from 'next/link'
+import Image from 'next/image'
+
 
 const Navbar = () => {
+    
+    //navbar contents
+    const navbarContents = (path, content) => {
+        return(
+            <li><Link href={path}><a>{content}</a></Link></li>
+        )
+    }
+
+
+    //actual page
     return ( 
         <nav className="navigation">
 
@@ -15,9 +26,9 @@ const Navbar = () => {
             {/* navbar */}
             <div className="navigation-secondary">
                 <ul>
-                    <li><Link href="/"><a>Home</a></Link></li>
-                    <li><Link href="/about"><a>About</a></Link></li>
-                    <li><Link href="/cookies"><a>Cookies</a></Link></li>
+                    {navbarContents("/", "Home")}
+                    {navbarContents("/about", "About")}
+                    {navbarContents("/cookies", "Cookies")}
                 </ul>
             </div>
             
