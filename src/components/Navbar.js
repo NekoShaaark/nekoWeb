@@ -5,9 +5,9 @@ import Image from 'next/image'
 const Navbar = () => {
     
     //navbar contents
-    const navbarContents = (path, content) => {
+    const navbarContents = (path, name) => {
         return(
-            <li><Link href={path}><a>{content}</a></Link></li>
+            <li><Link href={path}><a>{name}</a></Link></li>
         )
     }
 
@@ -19,7 +19,7 @@ const Navbar = () => {
             {/* logo */}
             <div className ="navigation-primary">
                 <Link href="/">
-                    <Image src="/logo.png" width={131} height={79.25} alt="NekoWeb" title="Back to Homepage"/>
+                    <Image src="/logo.png" width={131} height={79.25} alt="Logo" title="Back to Homepage"/>
                 </Link>
             </div>
         
