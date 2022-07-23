@@ -15,11 +15,11 @@ const pVariants = {
 }
 
 const floating1Variants = {
-  floating: { y: [10, 0, 10] }
+  floating: { y: [10, 0, 10], transition: {ease:"easeInOut", duration:2, repeat:Infinity} }
 }
 
 const floating2Variants = {
-  floating: { y: [20, 1, 20] }
+  floating: { y: [0, 20, 0], transition: {ease:"easeInOut", duration:3, repeat:Infinity} }
 }
 
 
@@ -33,11 +33,11 @@ export default function Home() {
       <motion.h1 className={styles.title} variants={h1Variants} initial="hidden" animate="enter">About</motion.h1>
       <motion.div className={styles.text} variants={pVariants} initial="hidden" animate="enter">
         
-        <motion.p variants={floating1Variants} animate="floating" transition={{ease: "easeInOut", duration: 2, repeat: Infinity}}>
+        <motion.p variants={floating1Variants} animate="floating" whileHover={{ y:10, color:"#555", transition:{ease:"easeInOut"} }}>
           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Mollitia perspiciatis rerum architecto ipsum praesentium minus veniam. Itaque optio non eligendi! Quas qui nesciunt, exercitationem odio inventore ea nemo natus ad!
         </motion.p>
         
-        <motion.p variants={floating2Variants} animate="floating" transition={{ease: "easeInOut", duration: 3, repeat: Infinity}}>
+        <motion.p variants={floating2Variants} animate="floating" whileHover={{ y:0, color:"#555", transition:{ease:"easeInOut"} }}>
           Corrupti porro, beatae magni delectus quibusdam et amet dicta placeat? Aliquam cumque, similique quidem blanditiis voluptatum laboriosam ea ratione. Labore sed temporibus aperiam libero! Veniam deleniti id quod maxime explicabo!
         </motion.p>
 
