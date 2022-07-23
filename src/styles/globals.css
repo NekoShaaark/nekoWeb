@@ -1,6 +1,6 @@
 @import url('https://api.fonts.coollabs.io/css2?family=Nunito:wght@300;400;600;700&display=swap');
 
-/* <===general===> */
+/* #region <===general===> */
 body {
     display: flex;
     margin: 0;
@@ -15,14 +15,17 @@ a {
     color: #333;
     text-decoration: none;
 }
-/* <======> */
+/* #endregion <======> */
 
 
 
-/* <===layout===> */
+/* #region <===layout===> */
 .layout {
     display: grid;
-    grid-template-columns: 1fr min(80ch, calc(100% - 64px)) 1fr;
+    grid-template-columns: /* leftbar content rightbar */ 
+        1fr 
+        min(80ch, calc(100% - 64px)) 
+        1fr;
     grid-template-areas:
         "navbar  navbar  navbar"
         "leftbar content rightbar"
@@ -32,83 +35,53 @@ a {
 /* CREDIT TO JOSH W COMEAU  https://www.joshwcomeau.com/css/full-bleed/ */
 
 
-/* ---sidebars--- */
-.leftbar {
-    position: relative;
-    overflow: hidden;
-    height: auto;
-    width: auto;
-    max-height: 100%;
-    top: 0;
-    left: 0;
-    z-index: 2;
-    grid-area: leftbar;
-    /* background-color: blue; */
-    /* background-image: url("../../public/bar.png") */
-}
-.rightbar {
-    position: relative;
-    overflow: hidden;
-    height: auto;
-    width: auto;
-    max-height: 100%;
-    top: 0;
-    right: 0;
-    z-index: 2;
-    grid-area: rightbar;
-    /* background-color: blue; */
-    /* background-image: url("../../public/bar.png") */
-}
-/* ------ */
-
-
-/* ---navigation--- */
+/* #region ---navigation--- */
 .layout-nav {
     position: sticky;
-    grid-column: 1 / -1;
     top: 0;
     z-index: 3;
-    /* background: red; */
+    grid-area: navbar;
+    /* background-color: red; */
 }
 
 .navigation {
     display: flex;
     margin: 0px auto;
     padding: 10px 10px;
-    align-items: center;
-    top: 0;
     background-color: #ddf;
-    border-bottom: 2px solid #ddd;;
+    border-bottom: 2px solid #ddd;
 }
 
 .navigation-primary {
     display: flex;
-    cursor: pointer;
-    grid-area: navbar;
-}
-
-.navigation-secondary {
-    display: flex;
-    margin-left: 2%;
-    margin-top: auto;
     position: relative;
+    margin-left: 5vh;
+    margin-top: auto;
     transform: translateY(20px);
 }
-.navigation-secondary ul {
+.navigation-primary ul {
     display: flex;
     margin: 10px;
     padding: 0px;
     list-style: none;
 }
-.navigation-secondary li {
+.navigation-primary li {
     display: flex;
     padding: 8px;
     text-shadow: 0px 2px rgba(119, 119, 119, 0.178);
 }
-.navigation-secondary a:hover {
-    color: #0860d3;
+.navigation-primary a:hover {
     position: relative;
     transform: translateY(-2px);
+    color: #0860d3;
+}
+
+.navigation-secondary {
+    display: flex;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -12%);
+    cursor: pointer;
 }
 
 .navigation-settings {
@@ -116,10 +89,10 @@ a {
     margin-left: auto;
     margin-top: auto;
 }
-/* ------ */
+/* #endregion */
 
 
-/* ---content--- */
+/* #region ---content--- */
 .layout-content {
     position: relative;
     overflow: hidden;
@@ -131,10 +104,35 @@ a {
     grid-area: content;
     /* background: yellow; */
 }
-/* ------ */
+/* #endregion ------ */
 
 
-/* ---footer--- */
+/* #region ---sidebars--- */
+.leftbar {
+    position: relative;
+    overflow: hidden;
+    height: auto;
+    width: auto;
+    max-width: 100%;
+    z-index: 2;
+    grid-area: leftbar;
+    /* background-color: blue; */
+    /* background-image: url("../../public/sidebar9.png"); */
+}
+.rightbar {
+    position: relative;
+    overflow: hidden;
+    height: auto;
+    width: auto;
+    z-index: 2;
+    grid-area: rightbar;
+    /* background-color: blue; */
+    /* background-image: url("../../public/sidebar9_2.png"); */
+}
+/* #endregion ------ */
+
+
+/* #region ---footer--- */
 .layout-footer {
     position: relative;
     grid-area: footer;
@@ -146,18 +144,17 @@ footer {
     overflow: hidden;
     justify-content: center;
     padding: 20px 0;
-    margin-top: auto;
     width: 100%;
     color: #777;
     z-index: 2;
     border-top: 1px solid #ddd;
 }
-/* ------ */
-/* <======> */
+/* #endregion ------ */
+/* #endregion <======> */
 
 
 
-/* <===404===> */
+/* #region <===404===> */
 .not-found { text-align: center; margin-top: 50px; }
 .not-found a { color: #0860d3; text-decoration: underline; }
-/* <======> */
+/* #endregion <======> */

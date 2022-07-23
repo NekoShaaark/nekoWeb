@@ -1,14 +1,13 @@
 import Link from 'next/link'
 import Image from 'next/image'
+import { motion } from 'framer-motion'
 
 
 const Navbar = () => {
     
     //navbar contents
     const navbarContents = (path, name) => {
-        return(
-            <li><Link href={path}><a>{name}</a></Link></li>
-        )
+        return( <li><Link href={path}><a>{name}</a></Link></li> )
     }
 
 
@@ -18,24 +17,27 @@ const Navbar = () => {
 
             {/* logo */}
             <div className ="navigation-primary">
-                <Link href="/">
-                    <Image src="/logo.png" width={131} height={79.25} alt="Logo" title="Back to Homepage"/>
-                </Link>
-            </div>
-        
-            {/* navbar */}
-            <div className="navigation-secondary">
                 <ul>
                     {navbarContents("/", "Home")}
                     {navbarContents("/about", "About")}
                     {navbarContents("/cookies", "Cookies")}
                 </ul>
             </div>
+        
+            {/* navbar */}
+            <div className="navigation-secondary">
+                <Link href="/">
+                    <Image src="/logo.png" width={131} height={79.25} alt="Logo" title="Back to Homepage"/>
+                </Link>
+            </div>
             
             {/* settings (dark mode, etc.) */}
-            <div className="navigation-settings">
+            <motion.div className="navigation-settings"
+            animate={{ y: [10, 0, 10] }}
+            transition={{ ease: "easeInOut", duration: 2, repeat: Infinity }}
+            >
                 <Link href="/"><a>Placeholder</a></Link>
-            </div>
+            </motion.div>
         </nav>
     )
 }

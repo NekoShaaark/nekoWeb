@@ -15,15 +15,13 @@ const Layout = ({ children }) => {
                 <div className="layout-nav">
                     <Navbar />
                 </div>
-
-                {/* sidebars */}
+                
+                {/* content + sidebars */}
                 <div className="leftbar" />
-                <div className="rightbar" />
-
-                {/* content */}
                 <div className="layout-content">
                     { children }
                 </div>
+                <div className="rightbar" />
 
                 {/* footer */}
                 <div className="layout-footer">
