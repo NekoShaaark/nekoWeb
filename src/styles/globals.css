@@ -70,9 +70,14 @@ a {
     padding: 8px;
     text-shadow: 0px 2px rgba(119, 119, 119, 0.178);
 }
-.navigation-primary a:hover {
-    position: relative;
-    transform: translateY(-2px);
+.navigation-primary .background {
+    display: flex;
+    will-change: transform;
+    transition: transform 450ms;
+}
+.navigation-primary a:hover .background {
+    transition: transform 125ms;
+    transform: translateY(-8px);
     color: #0860d3;
 }
 

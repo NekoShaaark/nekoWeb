@@ -2,11 +2,10 @@ import Navbar from "./Navbar"
 import Footer from "./Footer"
 import { useRouter } from 'next/router'
 
-
 const Layout = ({ children }) => {
     const router = useRouter()
 
-    //render layout as normal
+    //render layout as normal (if is not on specified pages)
     if(router.pathname != "/404"){
         return (
             <div className="layout">

@@ -7,7 +7,17 @@ const Navbar = () => {
     
     //navbar contents
     const navbarContents = (path, name) => {
-        return( <li><Link href={path}><a>{name}</a></Link></li> )
+        return( 
+        <li>
+            <Link href={path}>
+                <a>
+                    <span className="background">
+                        {name}
+                    </span>
+                </a>
+            </Link>
+        </li> 
+        )
     }
 
 
@@ -15,7 +25,7 @@ const Navbar = () => {
     return ( 
         <nav className="navigation">
 
-            {/* logo */}
+            {/* navbar */}
             <div className ="navigation-primary">
                 <ul>
                     {navbarContents("/", "Home")}
@@ -24,7 +34,7 @@ const Navbar = () => {
                 </ul>
             </div>
         
-            {/* navbar */}
+            {/* logo */}
             <div className="navigation-secondary">
                 <Link href="/">
                     <Image src="/logo.png" width={131} height={79.25} alt="Logo" title="Back to Homepage"/>
